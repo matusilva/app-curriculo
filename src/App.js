@@ -4,6 +4,7 @@ import { StyleSheet, Text, View, Image, Alert, TouchableOpacity } from 'react-na
 import { Ionicons } from '@expo/vector-icons';
 
 import foto from '../assets/foto.png';
+import Card from './components/Card';
 
 export default function App() {
 
@@ -35,29 +36,14 @@ export default function App() {
           </View>
         </View>
 
-        <View style={styles.card_container}>
-          <View style={styles.card}>
-            <View style={styles.card_header}>
-              <Text>Experiência Profissional</Text>
-            </View>
-            <View style={styles.card_content}>
-              <Text style={styles.card_content_text}>RITS TECNOLOGIA</Text>
-              <Text style={styles.card_content_text}>CONTROL</Text>
-              <Text style={styles.card_content_text}>PROCESSO ÁGIL</Text>
-            </View>
-          </View>
-        </View>
-
-        <View style={styles.card_container}>
-          <View style={styles.card}>
-            <View style={styles.card_header}>
-              <Text>Formação Acadêmica</Text>
-            </View>
-            <View style={styles.card_content}>
-              <Text style={styles.card_content_text}>IFRN - Natal Central</Text>
-            </View>
-          </View>
-        </View>
+        <Card title="Formação Acadêmica">
+          <Text style={styles.card_content_text}>IFRN - NATAL CENTRAL</Text>
+        </Card>
+        <Card title="Experiência Profissional">
+          <Text style={styles.card_content_text}>RITS TECNOLOGIA</Text>
+          <Text style={styles.card_content_text}>CONTROL</Text>
+          <Text style={styles.card_content_text}>PROCESSO ÁGIL</Text>
+        </Card>
 
         <StatusBar style="auto" />
       </View>
@@ -94,23 +80,6 @@ const styles = StyleSheet.create({
   social_medias: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginTop: 10
-  },
-  card_container: {
-    width: '100%',
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginTop: 20
-  },
-  card: {
-    width: '60%',
-    borderRadius: 5,
-    borderWidth: 1,
-    borderColor: '#939393',
-    padding: 10,
-    backgroundColor: '#fff'
-  },
-  card_content: {
     marginTop: 10
   },
   card_content_text: {
